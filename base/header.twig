@@ -1,0 +1,15 @@
+
+{% set pages = [
+    {name: 'Strona główna', url: '/', slug: 'glowna'},
+    {name: 'Produkty', url: '/produkty.html', slug: 'produkty'},
+    {name: 'Opinie', url: '/opinie.html', slug: 'opinie'}
+] %}
+
+{% if pages %}
+        <ul>
+    {% for key in pages %}
+        <li {% if page ==  key.slug  %} class="active" {% endif %} ><a href="{{ key.url }}">{{ key.name }}</a></li>
+    {% endfor %}
+        </ul>
+{% endif %}
+
